@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>坚果手机</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.mobiles{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			overflow: hidden;
+		}
+		.mobiles ul{
+			list-style: none;
+		}
+		.mobiles ul li{
+			float: left;
+			width: 14.2857%;
+			position: relative;
+			top: 0;
+		}
+		.mobiles ul li img{
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="mobiles">
+		<ul>
+			<li><img src="images/1.png" alt="" /></li>
+			<li><img src="images/2.png" alt="" /></li>
+			<li><img src="images/3.png" alt="" /></li>
+			<li><img src="images/4.png" alt="" /></li>
+			<li><img src="images/5.png" alt="" /></li>
+			<li><img src="images/6.png" alt="" /></li>
+			<li><img src="images/7.png" alt="" /></li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript">
+		$(".mobiles").mousemove(function(event){
+			$(".mobiles ul li").each(function(){
+				$(this).css("top" , Math.abs($(this).offset().left + $(this).width() / 2 - event.clientX) / 3);
+			});
+		});
+		var arr = [10,30,200,204,104,180,230];
+		$(".mobiles ul li").each(function(i){
+			$(this).css({"top" : arr[i]});
+		});
+		$(".mobiles").mouseleave(function(){
+			$(".mobiles ul li").each(function(i){
+				$(this).stop(true).animate({"top" : arr[i]});
+			});
+		})
+	</script>
+</body>
+</html>

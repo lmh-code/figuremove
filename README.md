@@ -1,38 +1,15 @@
-段落、标题、区块代码：
-A First Level Header
-====================
-A Second Level Header
----------------------
+#####作品描述：
+这是一个图片随着手指移动的小效果，可以用作设计商品展示的界面。
 
-Now is the time for all good men to come to
-the aid of their country. This is just a
-regular paragraph.
+#####所属分类：
+DOM效果
 
-The quick brown fox jumped over the lazy
-dog's back.
-### Header 3
+#####设计难点：
+监听鼠标的移动，设置每一个元素的top值。
+分析业务逻辑是几层：
 
-> This is a blockquote.
-> 
-> This is the second paragraph in the blockquote.
->
-> ## This is an H2 in a blockquote
-
-修辞和强调：
-Some of these words *are emphasized*.
-Some of these words _are emphasized also_.
-Use two asterisks for **strong emphasis**.
-Or, if you prefer, __use two underscores instead__.
-列表：
-* Candy.
-* Gum.
-* Booze.
-链接：
-This is an [example link](http://example.com/).
-图片：
-![alt text](/path/to/img.jpg "Title")
-代码：
-I strongly recommend against using any `<blink>` tags.
-
-I wish SmartyPants used named entities like `&mdash;`
-instead of decimal-encoded entites like `&#8212;`.
+       (1)需要我们怎么设置元素的top值呢？
+          答：我们应该设置为鼠标指针与这个元素的中线位置的绝对值的正比（3分之1倍)
+       (2)但是我们有应该怎么的到元素的中线位置呢？
+          答：就是这个元素的净位置加上宽度的一半。
+        注意：鼠标离开盒子的时候，让每个元素动画恢复初始位置
